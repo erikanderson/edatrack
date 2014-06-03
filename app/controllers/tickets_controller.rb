@@ -1,5 +1,11 @@
 class TicketsController < ApplicationController
 
+before_action :authenticate_user!
+
+def index
+  @tickets = Ticket.all
+end
+
 def new
   @ticket = Ticket.new
 end
@@ -22,6 +28,9 @@ def edit
 end
 
 def update
+end
+
+def delete
 end
 
 def destroy
